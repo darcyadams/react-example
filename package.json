@@ -8,6 +8,7 @@
     "client-watch": "./node_modules/.bin/watchify client/start.coffee -o client/bundle.js --extension=.coffee --verbose"
   },
   "dependencies": {
+    "body-parser": "^1.9.2",
     "detect-dom-ready": "~1.0.2",
     "errorhandler": "~1.1.1",
     "express": "~4.8.5",
