@@ -45,7 +45,7 @@ Application = React.createClass
 
 
   componentDidMount: ->
-    @fetchResults()
+    @fetchResults('')
 
   
   handleChange: (e) ->
@@ -53,16 +53,16 @@ Application = React.createClass
     @setState
       searchTerm: term
 
-    @fetchResults()
+    @fetchResults(term)
 
 
 
 
-  fetchResults: ->
+  fetchResults: (term) ->
     new Request
       url: '/facilities/search'
       data:
-        q: @state.searchTerm
+        q: term
       authenticate: no
     .done (results) =>
       @setState {results}

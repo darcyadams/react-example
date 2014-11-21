@@ -29,6 +29,8 @@ class FacilityService
   search: (req, res) =>
     {q} = req.query
 
+    if q is '' then return @get(req, res)
+
     rv = []
     rv.push facility for facility in @data when facility.facilityName.toLowerCase().search(q.toLowerCase()) isnt -1
 
